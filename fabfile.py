@@ -14,3 +14,5 @@ def deploy():
 
   with cd('/tmp/%s' % dist):
     run('sudo python setup.py install')
+
+  run('supervisorctl restart clock')

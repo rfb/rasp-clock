@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from circuits import Debugger, Component, Event, Timer
-from circuits.app import Daemon
 from display import Display
 import pymetar
 import time
@@ -11,7 +10,6 @@ class App(Component):
     self.display = Display()
     self.clock = Clock().register(self)
     self.weather = Weather().register(self)
-    Daemon('edc.pid', '/home/rfb/clock/', 'stdin.log', 'stdout.log', 'stderr.log').register(self)
 
   def scroll_part(self, message):
     if not self.scrolling:
@@ -72,5 +70,3 @@ class Weather(Component):
     Timer(60, Event.create("report"), persist=True).register(self)
 
 App().run()
-#(App() + Debugger()).run()
-

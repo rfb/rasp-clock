@@ -1,3 +1,4 @@
 edc.pid
 *.pyc
 *.log
+build/*

@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-import time
-from display import Display
 from circuits import Debugger, Component, Event, Timer
 from circuits.app import Daemon
+from display import Display
 import pymetar
+import time
 
 class App(Component):
   def init(self):
@@ -15,7 +15,7 @@ class App(Component):
 
   def scroll_part(self, message):
     if not self.scrolling:
-      message = '    ' + message """ pad the message left """
+      message = '    ' + message
 
     if len(message) > 0:
       self.scrolling = True

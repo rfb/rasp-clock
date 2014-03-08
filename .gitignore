@@ -1,4 +1,6 @@
-edc.pid
+*.pid
 *.pyc
 *.log
 build/*
+dist/*
+MANIFEST
